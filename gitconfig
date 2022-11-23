@@ -1,6 +1,6 @@
 [user]
-        name    = Scott Cressi
-        email   = scottcressi@gmail.com
+        name    = Dan Sloan
+        email   = dsloan@companyemail.com
 [core]
         editor  = vim
         pager   = less -iR

@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
 
 # history
 HISTFILESIZE=1000000000
 HISTSIZE=1000000
-shopt -s histappend
 HISTCONTROL=ignoredups
 PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
@@ -19,7 +18,7 @@ BGBLACK='\[\e[40m\]'
 RED='\[\e[1;31m\]'
 BRED='\[\e[1;31m\]'
 BGRED='\[\e[41m\]'
-GREEN='\[\e[1;32m\]'
+GREEN='\e[1;32m'
 BGREEN='\[\e[1;32m\]'
 BGGREEN='\[\e[1;32m\]'
 YELLOW='\[\e[0;33m\]'
@@ -38,7 +37,7 @@ WHITE='\[\e[0;37m\]'
 BWHITE='\[\e[1;37m\]'
 BGWHITE='\[\e[1;37m\]'
 
-PROMPT='\u@\h'
+PROMPT='%n@%M'
 TEXT='\[\e[0m\]'
 
 # set term
@@ -52,7 +51,7 @@ printf -v _shell_depth_str '%*s' "$((SHLVL-1))" ''
 _shell_depth_str=${_shell_depth_str:+${_shell_depth_str// />} }
 
 # ps
-PS1="$_shell_depth_str$GREEN$PROMPT$RED\$(parse_git_branch_and_add_brackets) : \w\$ "$TEXT
+PS1="$_shell_depth_str%F{green}$PROMPT%F{red}\$(parse_git_branch_and_add_brackets) : %/$ "%F{white}
 
 # unset shell depth
 unset _shell_depth_str
@@ -61,7 +60,7 @@ unset _shell_depth_str
 
 # java
 export JAVA_HOME=~/jdk-9.0.4/
-export PATH=$PATH:~/jdk-9.0.4/bin/:/usr/local/bin/:~/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH:~/jdk-9.0.4/bin/:/usr/local/bin/:~/bin:/Users/ds94023/Library/Python/3.8/bin"
 
 # java grey screen fix
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -69,3 +68,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # go
 export GOBIN=/tmp/
 export GOROOT=/var/tmp/go
+export AWS_CA_BUNDLE=~/Downloads/mm-cert-bundle.pem
+

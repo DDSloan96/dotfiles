@@ -1,3 +1,2 @@
-sudo apt-get install -y python-pip
-sudo pip install dotfiles
-dotfiles --repo ~/repos/personal/dotfiles/ --sync --force
+sudo pip3 install dotfiles
+dotfiles --repo ~/git/dotfiles/ --sync --force

@@ -5,11 +5,11 @@ alias erg='grep --color=auto'
 alias grep='grep --color=auto'
 alias grpe='grep'
 alias gerp='grep'
-alias l='ls -ls --color'
+alias l='ls -ls -G'
 alias ll='ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep "^l"'
 alias lll='ls -la | grep "^d" && ls -la | grep "^-" && ls -la | grep "^l"'
 alias les="less"
-alias ls='ls --color'
+alias ls='ls -G'
 alias lses="less"
 alias rm="rm -i"
 alias sl='ls'
@@ -139,6 +139,8 @@ alias ks='kubectl get svc --all-namespaces'
 alias ksa='kubectl get serviceaccounts --all-namespaces'
 alias ksm='kubectl get servicemonitors --all-namespaces'
 alias kn='kubectl get nodes'
+alias kj='kubectl get jobs'
+alias kcj='kubectl get cronjobs'
 alias kgc='kops --state s3://kubernetes-`aws sts get-caller-identity --output text --query "Account"` get cluster'
 alias kx='kubectx'
 alias ke='kubectl exec -ti'
@@ -147,3 +149,12 @@ alias kkp='kubectl patch pod -p "{"metadata":{"finalizers":null}}" -n '
 
 # docker
 alias docker_cleanup='sudo docker rm $(sudo docker ps -a -q) ; sudo docker rmi $(sudo docker images -a -q)'
+
+# aws
+alias awsume='. awsume --session-name dsloan'
+
+# terrraform
+alias tp='terraform plan'
+alias ta='terraform apply'
+
+alias tf='terraform'
