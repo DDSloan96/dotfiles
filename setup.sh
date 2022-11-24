@@ -23,7 +23,6 @@ brew install jq
 brew install go
 brew install python3
 brew install --cask visual-studio-code
-brew install slack
 #funstuff
 brew install spotify
 
@@ -31,4 +30,7 @@ printf "Installing awsume and awsume console plugin with pip\n"
 pip3 install awsume awsume-console-plugin
 
 sudo pip3 install dotfiles
+mkdir git
+cd git
+git clone https://github.com/DDSloan96/dotfiles.git
 dotfiles --repo ~/git/dotfiles/ --sync --force
