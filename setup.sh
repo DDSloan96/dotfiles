@@ -1,4 +1,8 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/dansloan/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dansloan/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 xcode-select --install
 # Get brew.  OSX is pretty much useless without it.
 ############# Install applications and dependencies #############
